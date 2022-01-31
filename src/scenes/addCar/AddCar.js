@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
   input:{
     width:"70%",
     marginHorizontal:"12.5%",
-    height:40,
     marginBottom:20,
   }
 })
@@ -98,8 +97,10 @@ const AddCar = ({ route, navigation }) => {
             style={{
               borderColor:"red",
               borderWidth:1,
-              width: "40%",
-              marginHorizontal: "30%",
+              marginTop:20,
+
+              width: "60%",
+              marginHorizontal: "20%",
               borderRadius:15,
               backgroundColor:"#1122cc55"
             }}>dodaj auto</Button>

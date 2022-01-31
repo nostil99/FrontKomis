@@ -17,6 +17,11 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
+  input:{
+    width:"70%",
+    marginHorizontal:"12.5%",
+    marginBottom:20,
+  }
 })
 
 

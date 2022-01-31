@@ -75,7 +75,7 @@ const CarList = ({ route, navigation }) => {
                   marginHorizontal: "10%",
                   marginBottom: 15,
                   borderRadius: 15,
-                  backgroundColor: "#1100fa51",
+                  backgroundColor: "rgba(91,234,68,0.67)",
                   textAlign:"center",
 
                 }

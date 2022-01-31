@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
   buttonStyle: {
     marginBottom:10,
     width:"70%",
+    borderRadius:15
   }
 })
 

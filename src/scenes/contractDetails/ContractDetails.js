@@ -58,11 +58,12 @@ const ContractDetails = ({ route, navigation }) => {
             amount: {value.amount} zl
           </Text>
           <Button style={{
-            backgroundColor:"#aa002292",
+            backgroundColor:"rgba(0,238,230,0.83)",
             width: "70%",
             marginTop:20,
             marginHorizontal: "15%"
           }}
+                  color={"rgb(0,0,0)"}
           onPress={()=>{
 
           }}>zmodyfikuj </Button>
