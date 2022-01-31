@@ -47,6 +47,15 @@ const Home = ({ navigation }) => (
         navigation.navigate('AddCar', { from: 'Home' })
       }}
     />
+    <Button
+      style={styles.buttonStyle}
+      title="lista faktur"
+      color="white"
+      backgroundColor={colors.lightPurple}
+      onPress={() => {
+        navigation.navigate('ContractsList', { from: 'Home' })
+      }}
+    />
   </View>
 )
 

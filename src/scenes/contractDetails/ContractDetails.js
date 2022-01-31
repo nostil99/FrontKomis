@@ -17,12 +17,13 @@ const styles = StyleSheet.create({
   }
 })
 
-const CarDetails = ({ route, navigation }) => {
+const ContractDetails = ({ route, navigation }) => {
   const storeData = async (value) => {
     try {
       const jsonValue = JSON.stringify(value)
       await AsyncStorage.setItem('storage_Key', jsonValue)
       console.log("pobranie async")
+      console.log(value)
     } catch (e)
     {
       // saving error
@@ -42,22 +43,19 @@ const CarDetails = ({ route, navigation }) => {
 
           </View>
           <Text style={styles.title}>
-           Auto {value.manufacturer}  {value.model}
+           KlientID: {value.idClient}
           </Text>
           <Text style={styles.title}>
-           Vin {value.vin}
+            idEmployee: {value.idEmployee}
           </Text>
           <Text style={styles.title}>
-           Rok {value.year}
+            idCar: {value.idCar}
           </Text>
           <Text style={styles.title}>
-            dostepnosc {value.reserved = true? "dostepne" : "niedostepne"}
+            creationDate: {value.creationDate}
           </Text>
           <Text style={styles.title}>
-            status Kradziezy: {value.stolen = true? "nie kradzione" : "kradzione"}
-          </Text>
-          <Text style={styles.title}>
-            Uszkodzenia: {value.carIsDamaged = true? "nie" : "tak"}
+            amount: {value.amount} zl
           </Text>
           <Button style={{
             backgroundColor:"#aa002292",
@@ -66,7 +64,7 @@ const CarDetails = ({ route, navigation }) => {
             marginHorizontal: "15%"
           }}
           onPress={()=>{
-            navigation.navigate('CarModify')
+
           }}>zmodyfikuj </Button>
         </ScrollView>
     </SafeAreaView>
@@ -76,7 +74,7 @@ const CarDetails = ({ route, navigation }) => {
 }
 
 
-CarDetails.propTypes = {
+ContractDetails.propTypes = {
   route: PropTypes.shape({
     params: PropTypes.shape({ from: PropTypes.string }),
   }),
@@ -85,9 +83,9 @@ CarDetails.propTypes = {
   }),
 }
 
-CarDetails.defaultProps = {
+ContractDetails.defaultProps = {
   route: { params: { from: '' } },
   navigation: { goBack: () => null },
 }
 
-export default CarDetails
+export default ContractDetails

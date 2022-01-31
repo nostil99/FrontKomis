@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {Platform, SafeAreaView, ScrollView, SliderComponent, StyleSheet, View} from "react-native";
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from "axios";
 import {List, TextInput, Text, Searchbar, Button} from 'react-native-paper';
 
@@ -29,7 +29,6 @@ const CarModify = ({ route, navigation }) => {
   const [disable,setDistable] = useState(false);
   const [carInfo,setCarInfo] = useState([]);
 
-
   useEffect(()=>{
       getData()
   },[])
@@ -42,6 +41,11 @@ const CarModify = ({ route, navigation }) => {
       if(value !== null) {
         console.log(value)
         setCarInfo(JSON.parse(value))
+        setMarka(JSON.parse(value).manufacturer.toString())
+        setModel(JSON.parse(value).model.toString())
+        setVIN(JSON.parse(value).vin.toString())
+        setYear(JSON.parse(value).year.toString())
+        setID(JSON.parse(value).id.toString())
       }
 
       console.log("odbiera")
@@ -54,7 +58,7 @@ const CarModify = ({ route, navigation }) => {
       setDistable(true)
 
       alert(value.id.toString())
-      axios.put(carApiHost+"/"+value.id.toString(), {
+      axios.put(carApiHost+"/", {
         carDamage: [],
         carIsDamaged: false,
         manufacturer: marka.toString(),

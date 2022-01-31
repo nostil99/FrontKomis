@@ -4,11 +4,13 @@ import { colors } from 'theme'
 import Home from '../../../scenes/home'
 import Profile from '../../../scenes/profile'
 import CarList from '../../../scenes/carList'
+import ContractsList from '../../../scenes/ContractsList'
 import AddCar from '../../../scenes/addCar'
 import CarDetails from '../../../scenes/carDetails'
 import CarModify from '../../../scenes/modifyCar'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+import ContractDetails from "../../../scenes/contractDetails";
 
 // ------------------------------------
 // Constants
@@ -69,7 +71,22 @@ export const HomeNavigator = () => (
         title: 'CarModify',
       })}
     />
+    <Stack.Screen
+      name="ContractsList"
+      component={ContractsList}
+      options={({ navigation }) => ({
+        title: 'ContractsList',
+      })}
+    />
+    <Stack.Screen
+      name="ContractDetails"
+      component={ContractDetails}
+      options={({ navigation }) => ({
+        title: 'ContractDetails',
+      })}
+    />
   </Stack.Navigator>
+
 )
 
 export const ProfileNavigator = () => (
